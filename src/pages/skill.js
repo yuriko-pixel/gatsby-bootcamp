@@ -4,7 +4,6 @@ import Layout from '../components/layout';
 import Head from '../components/head'
 import aboutModule from '../styles/about.module.scss'
 import skillModule from '../styles/skill.module.scss'
-import witchcat from '../images/witchcat.png'
 import reduxicon from '../images/redux.svg'
 import reacticon from '../images/react.svg'
 import javaicon from '../images/java.svg'
@@ -12,7 +11,6 @@ import postgresqlicon from '../images/postgresql.svg'
 import oracleicon from '../images/oracle.svg'
 import jsicon from '../images/javascript.svg'
 import nekoicon from '../images/cat2.png'
-import Menu from '../components/menu'
 
 const Skill = ()=> {
   return (
