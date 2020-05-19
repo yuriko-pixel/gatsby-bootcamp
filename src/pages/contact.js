@@ -8,7 +8,7 @@ const Contact = ()=> {
   return (
     <Layout>
       <Head title="contact" />
-      <form className={conModule.container}>
+      <form className={conModule.container} method="post" action="https://yuriko-darragh.netlify.app/contact">
         <div className={conModule.flex}>
           <img src={caticon} className={conModule.icon} />
           <div className={conModule.title}>Contact</div>
