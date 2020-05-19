@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Cuprum&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  height: 135px;
+}
+
+.flex1 {
+  display: flex;
+}
+
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 980px;
+  min-height: 70px;
+  padding-top: 10px;
+  background: rgba(220,149,149, 0.9);
+  margin-left: 200px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.iconContainer {
+  width: 120px;
+  height: 130px;
+  padding-top: 10px;
+}
+
+.iconContainer_ {
+  width: 120px;
+  height: 120px;
+  padding-top: 10px;
+  background: rgba(217, 170, 205, 0.7);
+  border-radius: 15px;
+}
+
+.meicon {
+  background-image: url('../images/lady.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.meicon:hover {
+  background-image: url('../images/lady_selected.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+
+.meicon_ {
+  background-image: url('../images/lady_selected.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.workicon {
+  background-image: url('../images/coding.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.workicon_ {
+  background-image: url('../images/coding_selected.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.workicon:hover {
+  background-image: url('../images/coding_selected.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.workicon::selection {
+
+}
+
+.skillicon {
+  background-image: url('../images/HTML.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.skillicon_ {
+  background-image: url('../images/HTML_selected.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.skillicon:hover {
+  background-image: url('../images/HTML_selected.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.expicon {
+  background-image: url('../images/cards.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.expicon_ {
+  background-image: url('../images/cards_selected.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.expicon:hover {
+  background-image: url('../images/cards_selected.png');
+  margin-left: 30px;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+}
+
+.title:hover, .title_ {
+  color: #d83473;
+}
+
+a:visited {
+  color:#9f166a;
+}
+
+.container2 {
+  min-height: 70px;
+  padding: 0;
+  background: rgba(217, 170, 205, 0.7);
+  font-size: 20px;
+}
+
+.cat {
+  height: 150px;
+  margin-left: 150px;
+}
+
+.container3 {
+  min-height: 200px;
+  background:rgba(223,136,111, 0.5);
+  font-size: 20px;
+}

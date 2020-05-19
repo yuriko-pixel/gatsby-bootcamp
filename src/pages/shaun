@@ -1,0 +1,137 @@
+Index.js
+
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const dotenv = require('dovenv');
+//import routes
+const authRoute = require('./routes/auth');
+
+
+dotenv.config();
+
+//Connect to DB 
+mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => console.log('connected to database!')
+);
+
+//Middlewears
+app.use(express.json());
+
+//route middlewears
+app.use('/api/user', authRoute);
+
+app.listen(3000, () => console.log("server up and running"));
+
+Auth.js
+
+const router = require('express').Router();
+const User = require('../model/User');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt.js');
+const {registerValidation, loginValidation} = require('../validation');
+
+
+router.post('/register', async (req, res) => {
+
+//LETS VALIDATE THE DATA BEFORE WE ADD A User
+const {error} = registerValidation(req.body);
+if (error) return res.status(400).send(error.details[0].message);
+
+//checklog if the user is already in the database
+const emailExist = await User.findOne({email: req.body.email});
+if (emailExist) return res.status(400).send('Email already exists');
+
+// hash the password
+const salt = await bcrypt.gentSalt(10);
+const hashedPassword = await bcrypt.hash(req.body.password, salt);
+
+
+//Create a new user
+   const user = new User({
+       name: req.body.name,
+       email: req.body.email,
+       password: req.body.password
+   });
+   try {
+       const savedUser = await user.save();
+       res.send(savedUser);
+   } catch (err) {
+       res.status(400).send(err);
+   }
+});
+
+// login
+router.post('/login', (req, res) => {
+    const {error} = loginValidation(req.body);
+    if (error) return res.status(400).send(error.details[0].message);
+    const user = await User.findOne({email: req.body.email});
+    if (!user) return res.status(400).send('Email or Password is Wrong')
+    const validPass = await bcrypt.compare(req.body.password, user.password);
+    if(!validPass) return res.status(400).send('Email or Password is Wrong');
+
+    // reate and asign a token
+    cost token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
+    res.header('auth-token', token).send(token);
+});
+
+module.exports = router;
+
+
+User.js
+
+require(mongoose);
+const userSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+        min: 6,
+        max: 255
+    },
+    email: {
+    type: String,
+    required: true,
+    max: 255,
+    min: 6
+    },
+    password: {
+        type: String,
+        required: true,
+        max: 1024,
+        min: 6
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+module.exports = mongoose.model('User', userSchema);
+
+validation.js
+
+//Validation
+const Joi = require('@hapi/joi');
+
+//reg-validation
+const registerValidation = data => {
+
+const schema = {
+    name: Joi.string().min(6),required(),
+    email: Joi.string().min(6),required().email(),
+    password: JOI.string().min(6),required(),
+};
+    return Joi.validate(data, schema);
+};
+
+//login-validation
+const loginValidation = data => {
+
+const schema = {
+    email: Joi.string().min(6),required().email(),
+    password: JOI.string().min(6),required(),
+};
+    return Joi.validate(data, schema);
+};
+
+module.exports.registerValidation = registerValidation;
+module.exports.loginValidation = loginValidation;

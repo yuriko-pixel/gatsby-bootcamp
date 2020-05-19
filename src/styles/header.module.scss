@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@562;700&family=PT+Sans:ital@0;1&family=Shadows+Into+Light&display=swap');
+
+.caticon {
+  height: 200px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  background: linear-gradient(0deg,#003f8e,#88b5d3,#bbe2f1);//背景色にグラデーションを指定
+  background-clip: text;//テキストでくり抜く
+  -webkit-text-fill-color: transparent;//くり抜いた部分は背景を表示
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 25px;
+  padding-top: 10px;
+}
+
+.listcontainer {
+  width: 1000px;
+  background: rgba(220,149,149, 0.9);
+  margin-left: 200px;
+  border-radius: 10px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.headcontainer {
+  padding-top: 30px;
+}
+
+.titleicon {
+  width: 450px;
+  padding: 3px;
+  background: rgba(217, 170, 205, 0.3);
+  border-radius: 10px;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+}

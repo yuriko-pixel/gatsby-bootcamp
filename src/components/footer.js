@@ -15,6 +15,7 @@ const Footer = ()=> {
   return (
     <div>
       <footer className={footerStyles.footer}>
+      <i class="fab fa-twitter"></i>
         <p>Created by {data.site.siteMetadata.author}, ©︎2020</p>
       </footer>
     </div>

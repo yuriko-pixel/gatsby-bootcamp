@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@562;700&family=PT+Sans:ital@0;1&family=Shadows+Into+Light&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.container {
+  min-height: 70px;
+  padding: 0;
+  background: rgba(220,149,149, 0.9);
+  font-size: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.caticon {
+  height: 200px;
+}
+
+.neko {
+  height: 200px;
+  margin-left: 350px;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.witchcat {
+  padding-top: 10px;
+  margin-left: 400px;
+}
+
+.title {
+  margin-left: 30px;
+  margin-top: 20px;
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+}
+
+.skillcontainer {
+  padding: 10px 0 0 80px;
+}
+
+.iconContainer {
+  min-width: 450px;
+  margin: 10px 0 20px 0;
+  height: 100px;
+}
+
+.skillicon {
+  width: 100px;
+  height: 100px;
+  margin: 0 50px;
+}
+
+.icontitle {
+  margin-top: 30px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 30px;
+  color: #941f57;
+}

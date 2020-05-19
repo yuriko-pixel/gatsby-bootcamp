@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@562;700&family=PT+Sans:ital@0;1&family=Shadows+Into+Light&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #404040;
+}
+
+.container {
+  width: 1000px;
+  margin-left: 200px;
+  border-radius: 15px;  
+  min-height: 70px;
+  background: rgba(220,149,140, 0.9);
+  font-size: 20px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon {
+  height: 150px;
+  margin-left: 350px;
+}
+
+.title {
+  font-size: 30px;
+  color:  #9f166a;
+  margin: 50px 0 0 20px;
+}
+
+.red {
+  color: red;
+  width: 3px;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  width: 900px;
+  padding: 5px;
+  margin: 10px auto;
+  text-align: left;
+}
+
+.namebox {
+  width: 440px;
+  margin: 0 5px;
+}
+
+.namelabel {
+  padding-left: 5px;
+}
+
+.name {
+  width: 350px;
+  border-radius: 5px;
+  font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 8px 0;
+	padding: 0.3em;
+	transition: 0.3s;
+	border: 2px solid #9f166a;
+	border-radius: 4px;
+	outline: none;
+}
+
+.label {
+  width: 900px;
+  padding-left: 5px;
+}
+
+.label1 {
+  width: 900px;
+  padding-left: 5px;
+}
+
+.label::after, .namelabel::after, .namelabel::after {
+  content: " *";
+  color: red;
+}
+
+.input_box {
+  width: 900px;
+  border-radius: 5px;
+  font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 8px 3px;
+	padding: 0.3em;
+	transition: 0.3s;
+	border: 2px solid #9f166a;
+	border-radius: 4px;
+	outline: none;
+}
+
+.input_box2 {
+  width: 900px;
+  min-height: 100px;
+  border-radius: 5px;
+  font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 8px 3px;
+	padding: 0.3em;
+	transition: 0.3s;
+	border: 2px solid #9f166a;
+	border-radius: 4px;
+	outline: none;
+}
+
+.btn {
+  width: 120px;
+  height: 40px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: #DA6848;/*背景色*/
+  border-bottom: solid 2px #D96340;/*少し濃い目の色に*/
+  border-radius: 4px;/*角の丸み*/
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  font-weight: bold;
+}
+
+.btn:active {
+  border-bottom: solid 2px #fd9535;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}

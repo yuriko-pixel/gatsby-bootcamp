@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@562;700&family=PT+Sans:ital@0;1&family=Shadows+Into+Light&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  width: 870px;
+  min-height: 70px;
+  padding: 20px 65px;
+  margin-left: 200px;
+  background: rgba(220,149,140, 0.9);
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+.title {
+  width: 700px;
+  margin: 10px auto;
+  font-size: 65px;
+  color: #c70067;
+}
+
+.tagcontainer{
+  width: 200px;
+  margin: 5px auto;
+  padding: 0;
+}
+
+.blogtag {
+  width: auto;
+  padding: 5px;
+  height: auto;
+  border-radius: 5px;
+  font-size: 20px;
+  background: #c70067;
+  color: white;
+  margin: 5px;
+}
+
+.date {
+  width: 700px;
+  margin: 10px auto;
+}
+
+.headerimg {
+  border-radius: 5px;
+}

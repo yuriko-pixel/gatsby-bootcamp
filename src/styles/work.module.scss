@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@562;700&family=PT+Sans:ital@0;1&family=Shadows+Into+Light&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  margin-top: 10px;
+  min-height: 70px;
+  padding: 0;
+  background: rgba(220,149,149, 0.9);
+  font-size: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.cat {
+  height: 150px;
+  margin-left: 350px;
+  margin-top: 10px;
+}
+
+.title {
+  font-size: 30px;
+  color:  #9f166a;
+  margin: 50px 0 0 10px;
+}
+
+.mockup1 {
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px -15px rgba(0,0,0,0.08);
+  margin-left: 200px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.text1 {
+  margin-top: 130px;
+  margin-left: 30px;
+  font-size: 30px;
+  box-shadow: 0 20px 30px -15px rgba(0,0,0,0.08);
+}
+
+
+.mockup2 {
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px -15px rgba(0,0,0,0.08);
+  margin-left: 200px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.text2 {
+  margin-top: 130px;
+  margin-left: 270px;
+  font-size: 30px;
+  box-shadow: 0 20px 30px -15px rgba(0,0,0,0.08);
+}

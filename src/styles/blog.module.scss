@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@562;700&family=PT+Sans:ital@0;1&family=Shadows+Into+Light&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+.container {
+  width: 870px;
+  min-height: 70px;
+  padding: 0 65px;
+  margin-left: 200px;
+  background: rgba(220,149,140, 0.9);
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cat {
+  height: 150px;
+  margin-left: 350px;
+}
+
+.post {
+  font-family: 'PT Sans', sans-serif;
+  background: #e6c0c0;
+  margin: 0 10px 10px 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.post:hover {
+  box-shadow: 5px 10px 20px rgba(0,0,0,0.25);
+}
+
+.tagcontainer {
+  width: 350px;
+  height: 50px;
+  margin-left: 150px;
+}
+
+.blogtag {
+  width: auto;
+  padding: 5px;
+  height: auto;
+  border-radius: 5px;
+  font-size: 20px;
+  background: #c70067;
+  color: white;
+  margin: 5px;
+}
+
+.titlecon {
+  width: 350px;
+  height: 50px;
+  margin-left: 150px;
+  padding-left: 5px;
+  text-align: left;
+  font-size: 35px;
+}
+
+.datecon {
+  width: 350px;
+  height: 50px;
+  margin-left: 150px;
+  padding-left: 5px;
+  text-align: left;
+  font-size: 20px;
+  color: gray;
+}
+
+.headerimg {
+  border-radius: 3px;
+}

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cuprum&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+.flex1 {
+  display: flex;
+}
+
+.title {
+  margin-top: 50px;
+  margin-left: 30px;
+  color: #9f166a;
+  font-size: 35px;
+}
+
+.container {
+  width: 980px;
+  min-height: 70px;
+  padding-top: 10px;
+  background: rgba(220,149,149, 0.9);
+  margin-left: 200px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.container2 {
+  min-height: 70px;
+  padding: 0;
+  background: rgba(217, 170, 205, 0.7);
+  font-size: 20px;
+}
+
+.cat {
+  height: 150px;
+  margin-left: 350px;
+}
+
+.container3 {
+  min-height: 200px;
+  background:rgba(223,136,111, 0.5);
+  font-size: 20px;
+}
+
+.content {
+  margin-top: 10px;
+  font-family: 'PT Sans', sans-serif;
+  color: dimgray;
+}
+
+.twitter_icon, .twitter_icon:visited  {
+    color: #41A1F3;
+}
+
+.github_icon, .github_icon:visited {
+  color: black;
+}
+
+.linkedin_icon, .linkedin_icon:visited {
+  color: #2E78B7;
+}
+
+.iconcontainer {
+  padding: 10px 0 20px 0;
+}

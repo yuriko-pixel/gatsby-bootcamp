@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@562;700&family=PT+Sans:ital@0;1&family=Shadows+Into+Light&display=swap');
+
+@font-face {
+  font-family: "Lato";
+  src:url("../images/DancingScript-VariableFont_wght.ttf") format("truetype"); 
+}
+
+
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: url('../images/pinksky.jpg');
+  background-size: cover;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 980px;
+  min-height: 300px;
+  padding: 10px;
+  background: rgba(220,149,149, 0.9);
+  margin-left: 200px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.propic {
+  width: 150px;
+  text-align: left;
+  margin-left: 300px;
+}
+
+.procomment {
+  font-family: 'cursive';
+  margin-left: 50px;
+  padding-top: 50px;
+  color:  #404040;
+  font-size: 30px;
+  
+}
+
+.title {
+  font-family: 'Pacifico', cursive;
+}
+
+.comment {
+  font-family: 'PT Sans', sans-serif;
+}
