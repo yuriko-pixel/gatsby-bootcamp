@@ -15,10 +15,6 @@ const Contact = ()=> {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
-  
-
-  const Change = e => this.setState({ [e.target.name]: e.target.value });
-
   const handleSubmit= (e)=> {
     let data = 
       {firstname: fname,
@@ -40,7 +36,8 @@ const Contact = ()=> {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode(data)
     })
-      .then(() => alert("Success!"))
+      .then(res=>res.text())
+      .then(text=>console.log(text))
       .catch(error => alert(error));
 
     e.preventDefault();
