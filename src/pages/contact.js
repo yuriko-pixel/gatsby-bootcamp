@@ -16,28 +16,10 @@ const Contact = ()=> {
   const [message, setMessage] = useState('');
 
   
-  const Submit = e => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
-
-    e.preventDefault();
-  };
 
   const Change = e => this.setState({ [e.target.name]: e.target.value });
 
-  const handleSubmit= ()=> {
-    // console.log(`${fname} ${lname} ${email} ${website} ${subject} ${message}`)
-    // setfName('');
-    // setlName('');
-    // setEmail('');
-    // setWebsite('');
-    // setSubject('');
-    // setMessage('');
+  const handleSubmit= (e)=> {
     let data = 
       {firstname: fname,
        lastname: lname,
@@ -53,7 +35,7 @@ const Contact = ()=> {
             .join("&");
       }
 
-    fetch("/", {
+    fetch("/contact", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode(data)
@@ -62,6 +44,12 @@ const Contact = ()=> {
       .catch(error => alert(error));
 
     e.preventDefault();
+     setfName('');
+    setlName('');
+    setEmail('');
+    setWebsite('');
+    setSubject('');
+    setMessage('');
   }
 
   return (
@@ -113,7 +101,7 @@ const Contact = ()=> {
             onChange={(e) => setMessage(e.target.value)}/>
         </div>
         
-        <button type="button" className={conModule.btn} onClick={handleSubmit}>Send</button>
+        <button type="button" className={conModule.btn} onClick={e=>handleSubmit(e)}>Send</button>
       </form>
     </Layout>
   )
