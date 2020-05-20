@@ -36,7 +36,7 @@ const Contact = ()=> {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode(data)
     })
-      .then(res=>{if(res.ok){alert("success")}})
+      .then(res=>{if(res.ok){console.log("success")}})
       .catch(error => alert(error));
 
     e.preventDefault();
