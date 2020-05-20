@@ -5,6 +5,8 @@ import conModule from '../styles/con.module.scss'
 import caticon from '../images/catbum.png';
 import {useState} from 'react'
 
+
+
 const Contact = ()=> {
   const [fname, setfName] = useState('');
   const [lname, setlName] = useState('');
@@ -13,16 +15,47 @@ const Contact = ()=> {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
+  
+  const Submit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
+
+  const Change = e => this.setState({ [e.target.name]: e.target.value });
+
   const handleSubmit= ()=> {
     // console.log(`${fname} ${lname} ${email} ${website} ${subject} ${message}`)
-    setfName('');
-    setlName('');
-    setEmail('');
-    setWebsite('');
-    setSubject('');
-    setMessage('');
+    // setfName('');
+    // setlName('');
+    // setEmail('');
+    // setWebsite('');
+    // setSubject('');
+    // setMessage('');
+    let data = 
+      {firstname: fname,
+       lastname: lname,
+       Email: email,
+       webURL,
+       subject,
+       message
+      };
 
-    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode(data)
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
   }
 
   return (
