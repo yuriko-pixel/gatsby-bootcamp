@@ -42,7 +42,7 @@ const Contact = ()=> {
       {firstname: fname,
        lastname: lname,
        Email: email,
-       webURL,
+       website,
        subject,
        message
       };
