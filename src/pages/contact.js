@@ -148,7 +148,7 @@ const Contact = ()=> {
       );
     
 }
-
+export default Contact;
 {/* <Layout>
       <Head title="contact" />
       <form name="contactf" className={conModule.container} method="post" id="contactform" data-netlify="true">
