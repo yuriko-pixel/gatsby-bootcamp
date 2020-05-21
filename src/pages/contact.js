@@ -108,8 +108,13 @@ import {useState} from 'react'
 
 const Contact = ()=> {
 
+  const encode = (data) => {
+            return Object.keys(data)
+                .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+                .join("&");
+          }
 
-    handleSubmit = e => {
+    const handleSubmit = e => {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -121,24 +126,24 @@ const Contact = ()=> {
       e.preventDefault();
     };
 
-    handleChange = e => this.setState({ [e.target.name]: e.target.value });
+    
     
 
     return (
         <form onSubmit={e=> handleSubmit(e)}>
           <p>
             <label>
-              Your Name: <input type="text" name="name" value={name}  />
+              Your Name: <input type="text" name="name"   />
             </label>
           </p>
           <p>
             <label>
-              Your Email: <input type="email" name="email" value={email}  />
+              Your Email: <input type="email" name="email"  />
             </label>
           </p>
           <p>
             <label>
-              Message: <textarea name="message" value={message}  />
+              Message: <textarea name="message"   />
             </label>
           </p>
           <p>
