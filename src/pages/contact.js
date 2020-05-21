@@ -34,7 +34,7 @@ const Contact = ()=> {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode(data)
+      body: encode({"form-name": 'Yuriko'})
     })
       .then(res=>{if(res.ok){console.log("success")}})
       .catch(error => alert(error));
@@ -50,6 +50,18 @@ const Contact = ()=> {
 
   return (
     <Layout>
+      <Head title="contact" />
+      <form name="contactf" className={conModule.container} method="post" id="contactform" data-netlify="true">
+        <input type="hidden" name="form-name" value="contactf" />
+        <button type="button" className={conModule.btn} onClick={e=>handleSubmit(e)}>Send</button>
+      </form>
+    </Layout>
+  )
+}
+
+export default Contact;
+
+{/* <Layout>
       <Head title="contact" />
       <form name="contactf" className={conModule.container} method="post" id="contactform" data-netlify="true">
         <input type="hidden" name="form-name" value="contactf" />
@@ -100,8 +112,4 @@ const Contact = ()=> {
         
         <button type="button" className={conModule.btn} onClick={e=>handleSubmit(e)}>Send</button>
       </form>
-    </Layout>
-  )
-}
-
-export default Contact;
+    </Layout> */}
