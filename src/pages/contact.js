@@ -125,24 +125,24 @@ const Contact = ()=> {
     
 
     return (
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={e=> handleSubmit(e)}>
           <p>
             <label>
-              Your Name: <input type="text" name="name" value={name} onChange={this.handleChange} />
+              Your Name: <input type="text" name="name" value={name}  />
             </label>
           </p>
           <p>
             <label>
-              Your Email: <input type="email" name="email" value={email} onChange={this.handleChange} />
+              Your Email: <input type="email" name="email" value={email}  />
             </label>
           </p>
           <p>
             <label>
-              Message: <textarea name="message" value={message} onChange={this.handleChange} />
+              Message: <textarea name="message" value={message}  />
             </label>
           </p>
           <p>
-            <button type="submit" onClick={e=> handleSubmit(e)}>Send</button>
+            <button type="submit">Send</button>
           </p>
         </form>
       );
