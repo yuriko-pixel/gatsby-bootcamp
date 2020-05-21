@@ -51,8 +51,8 @@ const Contact = ()=> {
   return (
     <Layout>
       <Head title="contact" />
-      <form name="Contact Form" className={conModule.container} method="post" id="contactform" data-netlify="true">
-        <input type="hidden" name="form-name" value="Contact Form" />
+      <form name="contactf" className={conModule.container} method="post" id="contactform" data-netlify="true">
+        <input type="hidden" name="form-name" value="contactf" />
         <div className={conModule.flex}>
           <img src={caticon} className={conModule.icon} />
           <div className={conModule.title}>Contact</div>
