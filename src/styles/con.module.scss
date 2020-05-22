@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@562;700&family=PT+Sans:ital@0;1&family=Shadows+Into+Light&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/font-awesome.min.css');
 
 body {
   font-family: 'Lato', sans-serif;
@@ -29,6 +30,10 @@ body {
   font-size: 30px;
   color:  #9f166a;
   margin: 50px 0 0 20px;
+}
+
+form {
+  padding-bottom: 30px;
 }
 
 .red {
@@ -132,4 +137,22 @@ body {
 .btn:active {
   border-bottom: solid 2px #fd9535;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+.messagecon {
+  width: 1000px;
+}
+
+.success {
+  font-size: 100px;
+  color: #009944;
+}
+
+.sucmessage {
+  font-size: 30px;
+  color: #009944;
+}
+
+.errmsg {
+  width: 1000px;
 }

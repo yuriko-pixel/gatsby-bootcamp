@@ -5,7 +5,7 @@ import conModule from '../styles/con.module.scss'
 import caticon from '../images/catbum.png';
 import {useState} from 'react'
 import axios from 'axios'
-import {Link} from 'gatsby';
+import MaterialIcon, {colorPalette} from 'material-icons-react';
 
 const Contact = () => {
 
@@ -32,12 +32,29 @@ const Contact = () => {
       data: new FormData(form)
     })
       .then(r => {
-        handleServerResponse(true, "Thanks!", form);
+        handleServerResponse(true, 
+        (<div className={conModule.messagecon}>
+          <div className={conModule.success}>
+            <i className="fa fa-check-circle success"></i>
+          </div>
+            <span className={conModule.sucmessage}>Message sent successfully</span>
+            <span className={conModule.sucmessage}>I will reply as soon as possible.</span>
+        </div>), 
+        form);
+        
       })
       .catch(r => {
-        handleServerResponse(false, r.response.data.error, form);
+        handleServerResponse(false, 
+          (<div className={conModule.messagecon}>
+            <MaterialIcon icon="error" color='#dc143c' size={100} />
+            <div className={conModule.errmsg}>Opps! Something went wrong.</div>
+            <div className={conModule.errmsg}>Please try again.</div>
+          </div>), 
+          form);
+        
       });
   };
+
   return (
     <Layout>
       <Head title="contact" />
@@ -83,7 +100,9 @@ const Contact = () => {
             <textarea placeholder="Type Your Message Here..." type="text" id="message" className={conModule.input_box2}/>
           </div>
 
-            <Link to="/thanku"><button type="submit" className={conModule.btn} disabled={serverState.submitting}>Submit</button></Link>
+          <button type="submit" className={conModule.btn} disabled={serverState.submitting}>
+            Submit
+          </button>
             {serverState.status && (
                 <p className={!serverState.status.ok ? "errorMsg" : ""}>
                 {serverState.status.msg}

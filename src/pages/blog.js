@@ -34,7 +34,7 @@ const BlogPage = ()=> {
       <div className={blogModule.container}>
         <div className={blogModule.flex}>
           <img src={graycat} className={blogModule.cat} />
-          <div className={blogModule.title}>Blog</div>
+          <div className={blogModule.title1}>Blog</div>
         </div>
         
         <ol className={blogModule.posts}>
