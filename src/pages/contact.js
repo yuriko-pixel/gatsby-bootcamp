@@ -6,9 +6,7 @@ import caticon from '../images/catbum.png';
 import {useState} from 'react'
 import axios from 'axios'
 import MaterialIcon from 'material-icons-react';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
-const gglsiteKey = process.env.gglSiteKey;
 
 const Contact = () => {
 
@@ -60,10 +58,6 @@ const Contact = () => {
   };
 
   return (
-  <GoogleReCaptchaProvider
-    reCaptchaKey={gglsiteKey}
-    useRecaptchaNet="true"
-  >
     <Layout>
       <Head title="contact" />
       <div className={conModule.container}>
@@ -118,7 +112,6 @@ const Contact = () => {
             </form>
           </div>
         </Layout>
-      </GoogleReCaptchaProvider>
   );
 };
 
