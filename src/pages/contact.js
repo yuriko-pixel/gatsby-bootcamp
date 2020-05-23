@@ -5,9 +5,13 @@ import conModule from '../styles/con.module.scss'
 import caticon from '../images/catbum.png';
 import {useState} from 'react'
 import axios from 'axios'
-import MaterialIcon, {colorPalette} from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
+import ReCAPTCHA from "react-google-recaptcha";
+
+const gglsiteKey = process.env.gglSiteKey;
 
 const Contact = () => {
+  const recaptchaRef = React.createRef();
 
   const [serverState, setServerState] = useState({
     submitting: false,
@@ -24,11 +28,15 @@ const Contact = () => {
   };
   const handleOnSubmit = e => {
     e.preventDefault();
+
+    const recaptchaValue = recaptchaRef.current.getValue();
+    this.props.onSubmit(recaptchaValue);
+
     const form = e.target;
     setServerState({ submitting: true });
     axios({
       method: "post",
-      url: "https://getform.io/f/152c2e4c-93c6-4f5f-b5d1-018dafb5f701",
+      url: process.env.GETFORM_URL,
       data: new FormData(form)
     })
       .then(r => {
@@ -64,7 +72,7 @@ const Contact = () => {
           <div className={conModule.title}>Contact</div>
         </div>
         <form onSubmit={handleOnSubmit}>
-
+        <ReCAPTCHA ref={recaptchaRef} sitekey={gglsiteKey} />
           <div className={conModule.box}>
             <div className={conModule.flex}>
               <div className={conModule.namebox}>
