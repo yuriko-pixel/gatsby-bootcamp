@@ -48,7 +48,7 @@ const Contact = () => {
       .catch(r => {
         handleServerResponse(false, 
           (<div className={conModule.messagecon}>
-            <MaterialIcon icon="error" color='#dc143c' size={100} />
+            {/* <MaterialIcon icon="error" color='#dc143c' size={100} /> */}
             <div className={conModule.errmsg}>Opps! Something went wrong.</div>
             <div className={conModule.errmsg}>Please try again.</div>
           </div>), 
