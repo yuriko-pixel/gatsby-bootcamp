@@ -6,12 +6,11 @@ import caticon from '../images/catbum.png';
 import {useState} from 'react'
 import axios from 'axios'
 import MaterialIcon from 'material-icons-react';
-import ReCAPTCHA from "react-google-recaptcha";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const gglsiteKey = process.env.gglSiteKey;
 
 const Contact = () => {
-  const recaptchaRef = React.createRef();
 
   const [serverState, setServerState] = useState({
     submitting: false,
@@ -28,9 +27,6 @@ const Contact = () => {
   };
   const handleOnSubmit = e => {
     e.preventDefault();
-
-    const recaptchaValue = recaptchaRef.current.getValue();
-    this.props.onSubmit(recaptchaValue);
 
     const form = e.target;
     setServerState({ submitting: true });
@@ -64,6 +60,10 @@ const Contact = () => {
   };
 
   return (
+  <GoogleReCaptchaProvider
+    reCaptchaKey={gglsiteKey}
+    useRecaptchaNet="true"
+  >
     <Layout>
       <Head title="contact" />
       <div className={conModule.container}>
@@ -72,7 +72,6 @@ const Contact = () => {
           <div className={conModule.title}>Contact</div>
         </div>
         <form onSubmit={handleOnSubmit}>
-        <ReCAPTCHA ref={recaptchaRef} sitekey={gglsiteKey} />
           <div className={conModule.box}>
             <div className={conModule.flex}>
               <div className={conModule.namebox}>
@@ -119,7 +118,7 @@ const Contact = () => {
             </form>
           </div>
         </Layout>
-   
+      </GoogleReCaptchaProvider>
   );
 };
 
