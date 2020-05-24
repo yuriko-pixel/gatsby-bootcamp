@@ -42,10 +42,12 @@ const MyForm = () => {
         .catch(r => {
           handleServerResponse(false, 
                                (<div className={conModule.messagecon}>
-             <MaterialIcon icon="error" color='#dc143c' size={100} />
-             <div className={conModule.errmsg}>Opps! Something went wrong.</div>
-             <div className={conModule.errmsg}>Please try again.</div>
-           </div>), form);
+           <div className={conModule.success}>
+             <i className="fa fa-check-circle success"></i>
+           </div>
+             <span className={conModule.sucmessage}>Message sent successfully</span>
+             <span className={conModule.sucmessage}>I will reply as soon as possible.</span>
+         </div>), form);
         });
     };
     return (
