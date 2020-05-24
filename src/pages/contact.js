@@ -28,7 +28,13 @@ const MyForm = () => {
         data: new FormData(form)
       })
         .then(r => {
-          handleServerResponse(true, "Thanks!", form);
+          handleServerResponse(true, (<div className={conModule.messagecon}>
+           <div className={conModule.success}>
+             <i className="fa fa-check-circle success"></i>
+           </div>
+             <span className={conModule.sucmessage}>Message sent successfully</span>
+             <span className={conModule.sucmessage}>I will reply as soon as possible.</span>
+         </div>), form);
         })
         .catch(r => {
           handleServerResponse(false, r.response.data.error, form);
