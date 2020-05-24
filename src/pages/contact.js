@@ -19,7 +19,7 @@ const MyForm = () => {
         form.reset();
       }
     };
-    const handleOnSubmit = e => {
+   const handleOnSubmit = e => {
       e.preventDefault();
       const form = e.target;
       setServerState({ submitting: true });
@@ -29,18 +29,10 @@ const MyForm = () => {
         data: new FormData(form)
       })
         .then(r => {
-          handleServerResponse(true, (
-          <div className={conModule.messagecon}>
-           <div className={conModule.success}>
-             <i className="fa fa-check-circle success"></i>
-           </div>
-             <span className={conModule.sucmessage}>Message sent successfully</span>
-             <span className={conModule.sucmessage}>I will reply as soon as possible.</span>
-         </div>
-          ), form);
+          handleServerResponse(true, "Thanks!", form);
         })
         .catch(r => {
-          handleServerResponse(false, r.response.data.error , form);
+          handleServerResponse(false, r.response.data.error, form);
         });
     };
     return (
