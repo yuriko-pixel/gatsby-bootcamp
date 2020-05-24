@@ -24,7 +24,7 @@ const MyForm = () => {
       setServerState({ submitting: true });
       axios({
         method: "post",
-        url: "https://getform.io/f/4113f349-e99f-495a-b529-18c2cb40e11c",
+        url: "https://getform.io/f/152c2e4c-93c6-4f5f-b5d1-018dafb5f701",
         data: new FormData(form)
       })
         .then(r => {
