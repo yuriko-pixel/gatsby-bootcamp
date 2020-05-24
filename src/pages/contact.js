@@ -1,7 +1,10 @@
-import React, { useState }  from "react"
-import axios from "axios";
-import { Link } from "gatsby"
-import Layout from "../components/layout"
+import React from 'react';
+import Layout from '../components/layout';
+import Head from '../components/head'
+import conModule from '../styles/con.module.scss'
+import caticon from '../images/catbum.png';
+import {useState} from 'react'
+import axios from 'axios'
 
 const MyForm = () => {
     
