@@ -48,40 +48,59 @@ const MyForm = () => {
     };
     return (
         <Layout>
-    
-    <div>
-         <div className="col-md-8 mt-5">
-            <h3>Getform.io Gatsby Form Example</h3>
-            <form onSubmit={handleOnSubmit}>
-            <div className="form-group">
-                <label for="exampleInputEmail1" required="required">Email address</label>
-                <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+      <Head title="contact" />
+      <div className={conModule.container}>
+        <div className={conModule.flex}>
+          <img src={caticon} className={conModule.icon} />
+          <div className={conModule.title}>Contact</div>
+        </div>
+        <form >
+          <div className={conModule.box}>
+            <div className={conModule.flex}>
+              <div className={conModule.namebox}>
+                <label for="firstname" className={conModule.label}>First Name</label>
+                <input type="text" name="name" className={conModule.input_box} id="firstname" placeholder="Enter your name" required="required" />
+              </div>
+              <div className={conModule.namebox}>
+                <label for="lastname" className={conModule.label}>Last Name</label>
+                <input type="text" name="name" className={conModule.input_box} id="lastname" placeholder="Enter your name" required="required"/>
+              </div>
+            </div>
+          </div>
+
+          <div className={conModule.box}>
+            <div className={conModule.flex}>
+                <label for="emailtype" required="required" className={conModule.label}>Email address</label>
+                <input type="email" name="email" className={conModule.input_box} id="emailtype" aria-describedby="emailHelp" placeholder="Enter email"/>
             </div> 
-            <div className="form-group">
-                <label for="exampleInputName">Name</label>
-                <input type="text" name="name" className="form-control" id="exampleInputName" placeholder="Enter your name" required="required"/>
-            </div>
-            <div className="form-group">
-                <label for="exampleFormControlSelect1">Favourite Platform</label>
-                <select className="form-control" id="exampleFormControlSelect1" name="platform" required="required">
-                <option>Github</option>
-                <option>Gitlab</option>
-                <option>Bitbucket</option>
-                </select>
-            </div>
-            <button type="submit" className="btn btn-primary"  disabled={serverState.submitting}>
-                Submit
-            </button>
+          </div>
+            
+          <div className={conModule.box}>
+            <label for="website" className={conModule.label1}>Website URL</label>
+            <input placeholder="Type Your Website URL (optional)" type="text" id="website" className={conModule.input_box}/>
+          </div>
+
+          <div className={conModule.box}>
+            <label for="subject" className={conModule.label}>Subject</label>
+            <input placeholder="Type Subject" type="text" id="subject" className={conModule.input_box} />
+          </div>
+
+          <div className={conModule.box}>
+            <label for="message" className={conModule.label}>Message</label>
+            <textarea placeholder="Type Your Message Here..." type="text" id="message" className={conModule.input_box2}/>
+          </div>
+
+          <button type="submit" className={conModule.btn} disabled={serverState.submitting}>
+            Submit
+          </button>
             {serverState.status && (
                 <p className={!serverState.status.ok ? "errorMsg" : ""}>
                 {serverState.status.msg}
                 </p>
             )}
             </form>
-        </div>
-      </div>  
-    
-  </Layout>
+          </div>
+        </Layout>
      
     );
   };
