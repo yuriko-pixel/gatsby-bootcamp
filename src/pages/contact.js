@@ -2,7 +2,6 @@ import React, { useState }  from "react"
 import axios from "axios";
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import MaterialIcon from 'material-icons-react';
 
 const MyForm = () => {
     
