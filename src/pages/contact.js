@@ -19,7 +19,7 @@ const MyForm = () => {
         form.reset();
       }
     };
-   const handleOnSubmit = e => {
+    const handleOnSubmit = e => {
       e.preventDefault();
       const form = e.target;
       setServerState({ submitting: true });
