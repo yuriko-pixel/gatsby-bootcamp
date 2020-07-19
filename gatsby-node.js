@@ -1,19 +1,17 @@
 const path = require('path');
 
-module.exports.onCreateNode = ({ node, actions }) => {
-  const { createNodeField } = actions;
+// module.exports.onCreateNode = ({ node, actions }) => {
+//   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
-    // const slug = createFilePath({ node, getNode, basePath: `pages` })
-    const slug = path.basename(node.fileAbsolutePath, '.md');
-    // console.log(slug);
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug
-    })
-  } 
-}
+//   if (node.internal.type === `MarkdownRemark`) {
+//     const slug = path.basename(node.fileAbsolutePath, '.md');
+//     createNodeField({
+//       node,
+//       name: `slug`,
+//       value: slug
+//     })
+//   } 
+// }
 
 module.exports.createPages = async({ graphql, actions}) => {
   const { createPage } = actions
