@@ -9,17 +9,19 @@ export const query = graphql`
   query($slug: String!) {
     contentfulBlogPost(slug: {eq: $slug}) {
       title
-      publishedDate(formatString: "MMMM Do, YYYY")
+      publishedDate (formatString: "MMMM Do, YYYY")
       blogtag {
-        blogtag
+        tag
       }
       headerimg {
         resize(width: 500, height: 300) {
           src
         }
       }
-      body {
-        json
+      childContentfulBlogPostBlogTextTextNode {
+        childMarkdownRemark {
+          html
+        }
       }
     } 
   }
@@ -35,14 +37,14 @@ const options = {
     }
   }
 }
-  console.log(props.data.contentfulBlogPost.blogtag.blogtag)
+  console.log(props.data.contentfulBlogPost.childContentfulBlogPostBlogTextTextNode.childMarkdownRemark.html)
     return (
         <Layout>
           <div className={blogtem.container}>
             <Head title={props.data.contentfulBlogPost.title} />
               <ol className={blogtem.tagcontainer}>
                 <div className={blogtem.flex}>
-                  {props.data.contentfulBlogPost.blogtag.blogtag.map(i=><li className={blogtem.blogtag}>{i}</li>)}
+                  {/* {props.data.contentfulBlogPost.blogtag.tag.map(i=><li className={blogtem.blogtag}>{i}</li>)} */}
                 </div>
               </ol>
               <div className={blogtem.title}>
@@ -53,7 +55,13 @@ const options = {
               </div>
               <img className={blogtem.headerimg} src={props.data.contentfulBlogPost.headerimg.resize.src} />
                 
-              {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
+              {/* {documentToReactComponents(props.data.contentfulBlogPost.childContentfulBlogPostBlogTextTextNode.childMarkdownRemark.html, options)} */}
+              <div
+                className={blogtem.body}
+                dangerouslySetInnerHTML={{
+                  __html: props.data.contentfulBlogPost.childContentfulBlogPostBlogTextTextNode.childMarkdownRemark.html,
+                }}
+              />
           </div>
         </Layout>
     )

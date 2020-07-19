@@ -5,67 +5,56 @@ import conModule from '../styles/con.module.scss'
 import caticon from '../images/catbum.png';
 import {useState} from 'react'
 import axios from 'axios'
-import MaterialIcon from 'material-icons-react';
 
-
-const Contact = () => {
-
-  // const [serverState, setServerState] = useState({
-  //   submitting: false,
-  //   status: null
-  // });
-  // const handleServerResponse = (ok, msg, form) => {
-  //   setServerState({
-  //     submitting: false,
-  //     status: { ok, msg }
-  //   });
-  //   if (ok) {
-  //     form.reset();
-  //   }
-  // };
-  // const handleOnSubmit = e => {
-  //   e.preventDefault();
-
-  //   const form = e.target;
-  //   setServerState({ submitting: true });
-  //   axios({
-  //     method: "post",
-  //     url: process.env.GETFORM_URL,
-  //     data: new FormData(form)
-  //   })
-  //     .then(r => {
-  //       handleServerResponse(true, 
-  //       (<div className={conModule.messagecon}>
-  //         <div className={conModule.success}>
-  //           <i className="fa fa-check-circle success"></i>
-  //         </div>
-  //           <span className={conModule.sucmessage}>Message sent successfully</span>
-  //           <span className={conModule.sucmessage}>I will reply as soon as possible.</span>
-  //       </div>), 
-  //       form);
-        
-  //     })
-  //     .catch(r => {
-  //       handleServerResponse(false, 
-  //         (<div className={conModule.messagecon}>
-  //           <MaterialIcon icon="error" color='#dc143c' size={100} />
-  //           <div className={conModule.errmsg}>Opps! Something went wrong.</div>
-  //           <div className={conModule.errmsg}>Please try again.</div>
-  //         </div>), 
-  //         form);
-        
-  //     });
-  // };
-
-  return (
-    <Layout>
+const MyForm = () => {
+    
+    const [serverState, setServerState] = useState({
+      submitting: false,
+      status: null
+    });
+    const handleServerResponse = (ok, msg, form) => {
+      setServerState({
+        submitting: false,
+        status: { ok, msg }
+      });
+      if (ok) {
+        form.reset();
+      }
+    };
+    const handleOnSubmit = e => {
+      e.preventDefault();
+      const form = e.target;
+      setServerState({ submitting: true });
+      axios({
+        method: "post",
+        url: "https://getform.io/f/152c2e4c-93c6-4f5f-b5d1-018dafb5f701",
+        data: new FormData(form)
+      })
+        .then(r => {
+          handleServerResponse(true, (<div className={conModule.messagecon}>
+           <div className={conModule.success}>
+             <i className="fa fa-check-circle success"></i>
+           </div>
+             <span className={conModule.sucmessage}>Message sent successfully</span>
+             <span className={conModule.sucmessage}>I will reply as soon as possible.</span>
+         </div>), form);
+        })
+        .catch(r => {
+          handleServerResponse(false, (<div className={conModule.messagecon}>
+             <div className={conModule.errmsg}>Opps! Something went wrong.</div>
+             <div className={conModule.errmsg}>Please try again.</div>
+           </div>), form);
+        });
+    };
+    return (
+        <Layout>
       <Head title="contact" />
       <div className={conModule.container}>
         <div className={conModule.flex}>
           <img src={caticon} className={conModule.icon} />
           <div className={conModule.title}>Contact</div>
         </div>
-        <form onSubmit={handleOnSubmit}>
+        <form >
           <div className={conModule.box}>
             <div className={conModule.flex}>
               <div className={conModule.namebox}>
@@ -112,7 +101,8 @@ const Contact = () => {
             </form>
           </div>
         </Layout>
-  );
-};
-
-export default Contact;
+     
+    );
+  };
+  
+  export default MyForm;

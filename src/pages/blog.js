@@ -13,14 +13,19 @@ const BlogPage = ()=> {
           node {
             title
             slug
-            publishedDate(formatString: "MMMM Do,YYYY")
-            blogtag {
-              blogtag
-            }
+            publishedDate (formatString: "MMMM Do,YYYY")
             headerimg {
               resize(width: 300, height: 200) {
-                src
+                    src
+                  }
+            }
+            blogText {
+              childMarkdownRemark {
+                html
               }
+            }
+            blogtag {
+              tag
             }
           }
         }
@@ -36,7 +41,6 @@ const BlogPage = ()=> {
           <img src={graycat} className={blogModule.cat} />
           <div className={blogModule.title1}>Blog</div>
         </div>
-        
         <ol className={blogModule.posts}>
           {data.allContentfulBlogPost.edges.map((edge)=> {
             return (
@@ -48,7 +52,7 @@ const BlogPage = ()=> {
                       <div className={blogModule.container2}>
                         <div className={blogModule.tagcontainer}>
                           <div className={blogModule.flex}>
-                            {edge.node.blogtag.blogtag.map(i=><li className={blogModule.blogtag}>{i}</li>)}
+                            {/* {edge.node.blogtag.tag.map(i=><li className={blogModule.blogtag}>{i}</li>)} */}
                           </div>
                         </div>
                         <div className={blogModule.titlecon}>
