@@ -1,7 +1,6 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 import Layout from '../components/layout'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Head from '../components/head'
 import blogtem from '../styles/blogTemp.module.scss'
 
@@ -37,7 +36,7 @@ const options = {
     }
   }
 }
-  console.log(props.data.contentfulBlogPost.childContentfulBlogPostBlogTextTextNode.childMarkdownRemark.html)
+  console.log(props.data.contentfulBlogPost.blogtag)
     return (
         <Layout>
           <div className={blogtem.container}>
