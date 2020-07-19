@@ -6,7 +6,7 @@ import caticon from '../images/catbum.png';
 import {useState} from 'react'
 import axios from 'axios'
 
-const MyForm = () => {
+export const MyForm = () => {
     
     const [serverState, setServerState] = useState({
       submitting: false,
